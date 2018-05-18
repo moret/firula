@@ -1,47 +1,53 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-class Fighter extends StatefulWidget {
-  Fighter({Key key, this.name}) : super(key: key);
+class FighterModel {
+  FighterModel({this.name, this.powerLevel});
+  String name;
+  int powerLevel = 0;
+}
 
-  final String name;
+class Fighter extends StatefulWidget {
+  Fighter(this.fighter, {Key key}) : super(key: key);
+
+  final FighterModel fighter;
 
   @override
   _FighterState createState() => new _FighterState();
 }
 
 class _FighterState extends State<Fighter> {
-  int _powerLevel = 0;
-
   void _decrementCounter() {
     setState(() {
-      _powerLevel = max(0, _powerLevel - 3000);
+      widget.fighter.powerLevel = max(0, widget.fighter.powerLevel - 3000);
     });
   }
 
   void _incrementCounter() {
     setState(() {
-      _powerLevel += 1234;
+      widget.fighter.powerLevel += 1234;
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    final String name = widget.fighter.name;
+    final int powerLevel = widget.fighter.powerLevel;
     return new Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         new Text(
-          widget.name,
+          name,
           style: new TextStyle(
             color: Colors.red,
             fontSize: 18.0,
           ),
         ),
         new Text(
-          (_powerLevel > 9000) ? 'It\'s over nine thousaaands!' : 'Pathetic.'
+          (powerLevel > 9000) ? 'It\'s over nine thousaaands!' : 'Pathetic.'
         ),
         new Text(
-          '$_powerLevel',
+          '$powerLevel',
           style: Theme.of(context).textTheme.display1,
         ),
         new Row(

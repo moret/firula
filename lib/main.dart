@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'fighter.dart';
+import 'stage.dart';
 
 void main() => runApp(new MyApp());
 
@@ -15,14 +15,11 @@ class MyApp extends StatelessWidget {
         appBar: new AppBar(
           title: new Text('Firula Counter'),
         ),
-        body: new Center(
-          child: new Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              new Fighter(name: 'Goku'),
-              new Fighter(name: 'Vegeta'),
-            ],
-          ),
+        body: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            new Stage(),
+          ],
         ),
       ),
     );
