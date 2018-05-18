@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() => runApp(new MyApp());
 
@@ -29,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _decrementCounter() {
     setState(() {
-      _powerLevel -= 3000;
+      _powerLevel = max(0, _powerLevel - 3000);
     });
   }
 
