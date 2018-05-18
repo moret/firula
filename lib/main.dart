@@ -16,7 +16,13 @@ class MyApp extends StatelessWidget {
           title: new Text('Firula Counter'),
         ),
         body: new Center(
-          child: new Fighter(),
+          child: new Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              new Fighter(name: 'Goku'),
+              new Fighter(name: 'Vegeta'),
+            ],
+          ),
         ),
       ),
     );

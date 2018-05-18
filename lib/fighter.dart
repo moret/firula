@@ -31,23 +31,34 @@ class _FighterState extends State<Fighter> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         new Text(
+          widget.name,
+          style: new TextStyle(
+            color: Colors.red,
+            fontSize: 18.0,
+          ),
+        ),
+        new Text(
           (_powerLevel > 9000) ? 'It\'s over nine thousaaands!' : 'Pathetic.'
         ),
         new Text(
           '$_powerLevel',
           style: Theme.of(context).textTheme.display1,
         ),
-        new RaisedButton(
-          child: new Text(
-            '+'
-          ),
-          onPressed: _incrementCounter,
-        ),
-        new RaisedButton(
-          child: new Text(
-            '-'
-          ),
-          onPressed: _decrementCounter,
+        new Row(
+          children: [
+            new RaisedButton(
+              child: new Text(
+                '+'
+              ),
+              onPressed: _incrementCounter,
+            ),
+            new RaisedButton(
+              child: new Text(
+                '-'
+              ),
+              onPressed: _decrementCounter,
+            ),
+          ],
         ),
       ],
     );
