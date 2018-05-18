@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'stage.dart';
+import 'home.dart';
 
 void main() => runApp(new MyApp());
 
@@ -11,17 +11,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.yellow,
       ),
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Firula Counter'),
-        ),
-        body: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            new Stage(),
-          ],
-        ),
-      ),
+      home: new Home(),
     );
   }
 }
