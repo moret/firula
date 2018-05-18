@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Text(
-              'Boring counter'
+              (_counter > 6) ? 'You passed!' : 'You failed!'
             ),
             new Text(
               '$_counter',
