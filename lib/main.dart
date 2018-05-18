@@ -27,6 +27,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  void _decrementCounter() {
+    setState(() {
+      _counter--;
+    });
+  }
+
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -44,6 +50,9 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Text(
+              'Boring counter'
+            ),
+            new Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
@@ -52,6 +61,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 '+'
               ),
               onPressed: _incrementCounter,
+            ),
+            new RaisedButton(
+              child: new Text(
+                '-'
+              ),
+              onPressed: _decrementCounter,
             ),
           ],
         ),
