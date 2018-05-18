@@ -25,17 +25,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int _powerLevel = 0;
 
   void _decrementCounter() {
     setState(() {
-      _counter--;
+      _powerLevel -= 3000;
     });
   }
 
   void _incrementCounter() {
     setState(() {
-      _counter++;
+      _powerLevel += 1234;
     });
   }
 
@@ -50,10 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Text(
-              (_counter > 6) ? 'You passed!' : 'You failed!'
+              (_powerLevel > 9000) ? 'It\'s over nine thousaaands!' : 'Pathetic.'
             ),
             new Text(
-              '$_counter',
+              '$_powerLevel',
               style: Theme.of(context).textTheme.display1,
             ),
             new RaisedButton(
